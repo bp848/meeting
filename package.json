@@ -1,25 +1,65 @@
 {
-  "name": "meetings議事録作製アシスタント",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@bp848/meeting-minutes-assistant",
+  "version": "1.0.0",
+  "description": "AI議事録作成アシスタント - 音声録音・Gemini AI文字起こし・要約・アクションプラン自動生成。Supabase連携対応。",
   "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:lib": "vite build --mode lib",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "keywords": [
+    "meeting", "minutes", "transcription", "gemini", "ai",
+    "react", "supabase", "議事録", "会議", "文字起こし"
+  ],
+  "author": "bp848",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bp848/meeting.git"
+  },
+  "homepage": "https://github.com/bp848/meeting#readme",
+  "bugs": {
+    "url": "https://github.com/bp848/meeting/issues"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "uuid": "^13.0.0",
-    "react": "^19.2.0",
     "@google/genai": "^1.30.0",
     "lucide-react": "^0.554.0",
     "react-markdown": "^10.1.0",
-    "react-dom": "^19.2.0"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^4.5.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   }
 }

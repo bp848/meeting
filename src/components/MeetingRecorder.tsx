@@ -30,7 +30,7 @@ export const MeetingRecorder: React.FC<MeetingRecorderProps> = ({
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
-  const timerRef = useRef<number>();
+  const timerRef = useRef<number>(null as unknown as number);
 
   useEffect(() => {
     if (navigator.permissions && navigator.permissions.query) {

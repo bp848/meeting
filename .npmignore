@@ -1,0 +1,12 @@
+src/
+.git/
+.gitignore
+.env*
+!.env.example
+node_modules/
+index.html
+metadata.json
+vite.config.ts
+tsconfig.json
+*.local
+docs/

@@ -1,4 +1,4 @@
-import { GoogleGenAI, SchemaType, Type } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 import { MODEL_TRANSCRIPTION, MODEL_ANALYSIS, THINKING_BUDGET, buildAnalysisSystemInstruction } from "../constants";
 import { AnalysisResult } from "../types";
 

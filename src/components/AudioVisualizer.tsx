@@ -7,10 +7,10 @@ interface AudioVisualizerProps {
 
 export const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ stream, isRecording }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
-  const analyserRef = useRef<AnalyserNode>();
-  const audioContextRef = useRef<AudioContext>();
-  const sourceRef = useRef<MediaStreamAudioSourceNode>();
+  const animationRef = useRef<number>(null as unknown as number);
+  const analyserRef = useRef<AnalyserNode>(null as unknown as AnalyserNode);
+  const audioContextRef = useRef<AudioContext>(null as unknown as AudioContext);
+  const sourceRef = useRef<MediaStreamAudioSourceNode>(null as unknown as MediaStreamAudioSourceNode);
 
   useEffect(() => {
     if (!stream || !isRecording || !canvasRef.current) return;
